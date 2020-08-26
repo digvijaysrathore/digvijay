@@ -12,15 +12,9 @@ export const HeaderBlock = ({ ...props }) => {
       {...props}
     >
       <Container>
-        <Flexbox d={["none", "flex"]} justifyContent="space-between" py="1">
-          <Branding />
-          <NavMenu
-            name={navName}
-            gap={[0, 8, 14]}
-            ml={["auto", "auto"]}
-            mr="null|10"
-          />
-          <ModeToggle ml="0" />
+        <Flexbox d={["none", "flex"]} justifyContent="space-between" mt="10" py="1">
+          <ModeToggle mt="2" ml="0" />
+          <SocialLinks mt="2" ml="4" mr="auto" borderLeftWidth="1px" pl="4" />
         </Flexbox>
       </Container>
       <Flexbox
@@ -71,22 +65,13 @@ export const HeaderBlock = ({ ...props }) => {
               <Icon name="x" size="6" />
             </Button>
           </Flexbox>
-          <NavMenu name={navName} gap={[0, 8]} borderTopWidth="1px" />
           <Flexbox py="4" justifyContent="space-between">
+            <SocialLinks />
             <ModeToggle ml="auto" />
           </Flexbox>
         </Div>
       </Flexbox>
     </Header>
-  )
-}
-
-export const Branding = () => {
-  const { title } = useSiteMetadata()
-  return (
-    <A href="/" fontSize="3xl" fontWeight="semibold" color="text">
-      {title}
-    </A>
   )
 }
 
@@ -104,5 +89,63 @@ export const ModeToggle = ({ ...props }) => {
       <Icon name={colorMode === "default" ? "sun" : "moon"} size="5" />
       <VisuallyHidden>Toggle mode</VisuallyHidden>
     </Button>
+  )
+}
+
+export const SocialLinks = ({ ...props }) => (
+  <Grid col="repeat(5, auto)" gap="5" {...props}>
+    <A href="https://twitter.com/novadigvijay" color="text" hoverColor="primary" target="_blank" rel="noreferrer">
+      <Icon name="twitter" size="5" />
+      <VisuallyHidden>Follow on Twitter</VisuallyHidden>
+    </A>
+    <A
+      href="https://github.com/digvijaysrathore"
+      target="_blank"
+      color="text"
+      hoverColor="primary"
+      rel="noreferrer"
+    >
+      <Icon name="github" size="5" />
+      <VisuallyHidden>Follow on Instagram</VisuallyHidden>
+    </A>
+    <A
+      href="https://www.youtube.com/channel/UCP8up2yLP_o5I5ToFpMU1uw?view_as=subscriber"
+      target="_blank"
+      color="text"
+      hoverColor="primary"
+      rel="noreferrer"
+    >
+      <Icon name="youtube" size="5" />
+      <VisuallyHidden>Follow on Instagram</VisuallyHidden>
+    </A>
+    <A
+      href="https://www.linkedin.com/in/digvijaysrathore/"
+      target="_blank"
+      color="text"
+      hoverColor="primary"
+      rel="noreferrer"
+    >
+      <Icon name="linkedin" size="5" />
+      <VisuallyHidden>Follow on Instagram</VisuallyHidden>
+    </A>
+    <A
+      href="https://github.com/reflexjs/reflex"
+      target="_blank"
+      color="text"
+      hoverColor="primary"
+      rel="noreferrer"
+    >
+      <Icon name="instagram" size="5" />
+      <VisuallyHidden>Follow on Instagram</VisuallyHidden>
+    </A>
+  </Grid>
+)
+
+export const Branding = () => {
+  const { title } = useSiteMetadata()
+  return (
+    <A href="/" className="hi" fontSize="2x1" fontWeight="semibold" color="text">
+      👋
+    </A>
   )
 }

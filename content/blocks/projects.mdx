@@ -5,17 +5,17 @@ export const Cards = ({ ...props }) => (
         <Card
           image="placeholder.jpg"
           title="kafe.email - Sending indie dev stories & interviews to your inbox."
-          link="#"
+          link="https://kafe.email"
         />
         <Card
           image="placeholder.jpg"
           title="Slash Co - Write posts, share pitures, comment & upvote others."
-          link="#"
+          link="https://slashco.netlify.app"
         />
         <Card
           image="placeholder.jpg"
           title="CatchUp! - React Native group chat & membership android app."
-          link="#"
+          link="https://github.com/digvijaysrathore"
         />
       </Grid>
     </Container>
@@ -23,6 +23,7 @@ export const Cards = ({ ...props }) => (
 )
 
 export const Card = ({ image, title, link, ...props }) => (
+  <A>
   <Flexbox
     flexDirection="column"
     boxShadow="xl"
@@ -30,6 +31,10 @@ export const Card = ({ image, title, link, ...props }) => (
     overflow="hidden"
     {...props}
   >
-    <Image src={image} w="full" h="32|40|64" />
+  <Image src={image} w="full" h="32|40|64" />
+  <Flexbox flexDirection="column" flex="1" textAlign="center" p="6|8">
+    <P color="secondaryHover" fontFamily="body">{title}</P>
   </Flexbox>
+  </Flexbox>
+  </A>
 )

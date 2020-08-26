@@ -1,5 +1,51 @@
-<Footer py="6">
-  <Container mt="20" textAlign="center">
-    <Block src="copyright" />
-  </Container>
-</Footer>
+import { useSiteMetadata } from "@reflexjs/gatsby-theme-core"
+export const FooterBlock = () => {
+  const { title } = useSiteMetadata()
+  return (
+    <Section py={[8, 10, 12]}>
+      <Container>
+        <Flexbox
+          flexDirection={["column", "row"]}
+          alignItems={["flex-start", "center"]}
+          justifyContent="space-between"
+        >
+          <Div maxW="300px">
+            <P fontSize="md">
+              Ping me if you have an idea worth working on.
+            </P>
+            <A href="mailto: dynamicdigvijay@gmail.com" fontSize="md" color="text" lineHeight="none">
+              <Icon name="mail" size="5" mr="2" />
+              dynamicdigvijay@gmail.com
+            </A>
+          </Div>
+          <NavMenu
+            name="footer-example"
+            dropdown={false}
+            my="6|0"
+            gap="4|10|18"
+          />
+        </Flexbox>
+        <Flexbox
+          borderTopWidth={1}
+          justifyContent="space-between"
+          pt={[4, 5, 6]}
+          mt={[4, 5, 6]}
+        >
+          <P fontSize="sm" my="0">
+            Playing <A target="_blank" href="https://playvalorant.com">Valorant</A> - digvijay #1631
+          </P>
+          <Grid col="2" gap="4" mt={[4, 0]}>
+            <A href="https://twitter.com/novadigvijay" target="_blank" color="text">
+              <Icon name="twitter" size={5} />
+              <VisuallyHidden>Follow on Twitter</VisuallyHidden>
+            </A>
+            <A href="https://www.youtube.com/channel/UCP8up2yLP_o5I5ToFpMU1uw?view_as=subscriber" target="_blank" color="text">
+              <Icon name="youtube" size={5} />
+              <VisuallyHidden>Follow on Instagram</VisuallyHidden>
+            </A>
+          </Grid>
+        </Flexbox>
+      </Container>
+    </Section>
+  )
+}
