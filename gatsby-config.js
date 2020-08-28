@@ -11,10 +11,50 @@ module.exports = {
     {
       resolve: `@reflexjs/gatsby-theme-post`,
       options: {
-        contentPath: "content/posts",
+        contentPath: "content/blog",
         basePath: "/blog",
-        postsPerPage: 4,
-        pageQuery: null,
+        postsPerPage: 10,
+        pageQuery: `query {
+          allPost(sort: {fields: date, order: DESC}, filter: {tags: {elemMatch: {name: {nin: "Alpha Humans"}}}}) {
+            nodes {
+              id
+              slug
+            }
+          }
+          allPostTag(sort: {fields: name, order: ASC}) {
+            nodes {
+              id
+              name
+              slug
+            }
+          }
+        }
+      `,
+        slugResolver: null,
+      }
+    },
+    {
+      resolve: `@reflexjs/gatsby-theme-post`,
+      options: {
+        contentPath: "content/posts",
+        basePath: "/journal",
+        postsPerPage: 10,
+        pageQuery: `query {
+          allPost(sort: {fields: date, order: DESC}, filter: {tags: {elemMatch: {name: {nin: "Journal"}}}}) {
+            nodes {
+              id
+              slug
+            }
+          }
+          allPostTag(sort: {fields: name, order: ASC}) {
+            nodes {
+              id
+              name
+              slug
+            }
+          }
+        }
+      `,
         slugResolver: null,
       }
     },
@@ -28,6 +68,6 @@ module.exports = {
         slugResolver: null,
         providers: []
       }
-    }
+    },
   ],
 }
