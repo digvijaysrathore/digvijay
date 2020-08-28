@@ -93,7 +93,11 @@ export const ModeToggle = ({ ...props }) => {
 }
 
 export const SocialLinks = ({ ...props }) => (
-  <Grid col="repeat(5, auto)" gap="5" {...props}>
+  <Grid col="repeat(7, auto)" gap="5" {...props}>
+    <A href="/" hoverColor="primary" target="_blank" rel="noreferrer">
+      <Icon name="home" size="5" />
+      <VisuallyHidden>Go to home</VisuallyHidden>
+    </A>
     <A href="https://twitter.com/novadigvijay" color="text" hoverColor="primary" target="_blank" rel="noreferrer">
       <Icon name="twitter" size="5" />
       <VisuallyHidden>Follow on Twitter</VisuallyHidden>
