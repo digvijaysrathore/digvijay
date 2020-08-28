@@ -11,50 +11,10 @@ module.exports = {
     {
       resolve: `@reflexjs/gatsby-theme-post`,
       options: {
-        contentPath: "content/blog",
-        basePath: "/blog",
-        postsPerPage: 10,
-        pageQuery: `query {
-          allPost(sort: {fields: date, order: DESC}, filter: {tags: {elemMatch: {name: {nin: "Alpha Humans"}}}}) {
-            nodes {
-              id
-              slug
-            }
-          }
-          allPostTag(sort: {fields: name, order: ASC}) {
-            nodes {
-              id
-              name
-              slug
-            }
-          }
-        }
-      `,
-        slugResolver: null,
-      }
-    },
-    {
-      resolve: `@reflexjs/gatsby-theme-post`,
-      options: {
         contentPath: "content/posts",
-        basePath: "/journal",
+        basePath: "/read",
         postsPerPage: 10,
-        pageQuery: `query {
-          allPost(sort: {fields: date, order: DESC}, filter: {tags: {elemMatch: {name: {nin: "Journal"}}}}) {
-            nodes {
-              id
-              slug
-            }
-          }
-          allPostTag(sort: {fields: name, order: ASC}) {
-            nodes {
-              id
-              name
-              slug
-            }
-          }
-        }
-      `,
+        pageQuery: null,
         slugResolver: null,
       }
     },
@@ -62,7 +22,7 @@ module.exports = {
       resolve: `@reflexjs/gatsby-theme-video`,
       options: {
         contentPath: "content/videos",
-        basePath: "/videos",
+        basePath: "/vlogs",
         videosPerPage: 10,
         pageQuery: null,
         slugResolver: null,
