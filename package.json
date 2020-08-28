@@ -12,12 +12,15 @@
     "preview": "gatsby build && gatsby serve"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^1.6.16",
+    "@mdx-js/react": "^1.6.16",
     "@reflexjs/gatsby-theme-base": "^0.3.3",
     "@reflexjs/gatsby-theme-post": "^0.6.5",
     "@reflexjs/gatsby-theme-video": "^0.4.5",
     "@theme-ui/match-media": "^0.3.1",
     "gatsby": "^2.22.11",
     "gatsby-plugin-manifest": "^2.4.25",
+    "gatsby-plugin-mdx": "^1.2.36",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "typeface-inter": "^3.12.0"
